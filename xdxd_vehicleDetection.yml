@@ -6,7 +6,7 @@ infer: false
 
 pretrained: true
 nn_framework:  torch
-batch_size: 12
+batch_size: 2
 
 data_specs:
   width: 512
@@ -21,10 +21,11 @@ data_specs:
   mask_channels: 1
   val_holdout_frac: 0.2
   data_workers:
+  dtype:
 
-training_data_csv: '/path/to/training_df.csv'
+training_data_csv: '/home/sarah/solaris_cowc/cowc/datasets/ground_truth_sets/train_data_cowc2.csv'
 validation_data_csv:
-inference_data_csv: '/path/to/test_df.csv'
+inference_data_csv: '/home/sarah/solaris_cowc/cowc/datasets/ground_truth_sets/test_data_cowc2.csv'
 
 training_augmentation:
   augmentations:
@@ -38,13 +39,13 @@ training_augmentation:
       p: 1.0
     Normalize:
       mean:
-        - 0.49390262571391047
-        - 0.4874114370592115
-        - 0.4438118841352573
+        - 0.4838757527165056
+        - 0.4812117968328578
+        - 0.4387958322833492
       std:
-        - 0.12502374613498723
-        - 0.12035038068404641
-        - 0.11842978198318978
+        - 0.142897272820752
+        - 0.13639378850861264
+        - 0.13438871891934998
       max_pixel_value: 255.0
       p: 1.0
   p: 1.0
@@ -57,13 +58,13 @@ validation_augmentation:
       p: 1.0
     Normalize:
       mean:
-        - 0.49390262571391047
-        - 0.4874114370592115
-        - 0.4438118841352573
+        - 0.4838757527165056
+        - 0.4812117968328578
+        - 0.4387958322833492
       std:
-        - 0.12502374613498723
-        - 0.12035038068404641
-        - 0.11842978198318978
+        - 0.142897272820752
+        - 0.13639378850861264
+        - 0.13438871891934998
       max_pixel_value: 255.0
       p: 1.0
   p: 1.0
@@ -71,13 +72,13 @@ inference_augmentation:
   augmentations:
     Normalize:
       mean:
-        - 0.49390262571391047
-        - 0.4874114370592115
-        - 0.4438118841352573
+        - 0.4838757527165056
+        - 0.4812117968328578
+        - 0.4387958322833492
       std:
-        - 0.12502374613498723
-        - 0.12035038068404641
-        - 0.11842978198318978
+        - 0.142897272820752
+        - 0.13639378850861264
+        - 0.13438871891934998
       max_pixel_value: 255.0
       p: 1.0
   p: 1.0
@@ -99,12 +100,12 @@ training:
   checkpoint_frequency: 10
   callbacks:
     model_checkpoint:
-      filepath: 'xdxd_best.pth'
+      filepath: '/home/sarah/solaris_cowc/xdxd_best.pth'
       monitor: val_loss
-  model_dest_path: 'xdxd.pth'
+  model_dest_path: '/home/sarah/solaris_cowc/xdxd.pth'
   verbose: true
 
 inference:
   window_step_size_x:
   window_step_size_y:
-  output_dir: 'inference_out/'
+  output_dir: '/home/sarah/solaris_cowc/inference_out/'
