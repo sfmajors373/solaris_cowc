@@ -19,11 +19,11 @@ data_specs:
   label_type: mask
   is_categorical: false
   mask_channels: 1
-  val_holdout_frac: 0.2
+  val_holdout_frac: 0.4
   data_workers:
   dtype:
 
-training_data_csv: '/home/sarah/solaris_cowc/cowc/datasets/ground_truth_sets/train_data_cowc2.csv'
+training_data_csv: '/home/sarah/solaris_cowc/cowc/datasets/ground_truth_sets/toronto.csv'
 validation_data_csv:
 inference_data_csv: '/home/sarah/solaris_cowc/cowc/datasets/ground_truth_sets/test_data_cowc2.csv'
 
